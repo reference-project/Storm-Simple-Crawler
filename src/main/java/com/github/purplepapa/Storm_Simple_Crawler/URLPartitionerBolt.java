@@ -1,4 +1,4 @@
-package com.github.purplepapa.Storm_Simple_Crawler.bolts;
+package com.github.purplepapa.Storm_Simple_Crawler;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +11,7 @@ import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 
-public class ParserBolt extends BaseRichBolt {
+public class URLPartitionerBolt extends BaseRichBolt {
 	private OutputCollector collector;
 
 	public void prepare(Map config, TopologyContext context,

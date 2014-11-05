@@ -1,4 +1,4 @@
-package com.github.purplepapa.Storm_Simple_Crawler.bolts;
+package com.github.purplepapa.Storm_Simple_Crawler;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,20 +11,19 @@ import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 
-public class URLDeduplicatorBolt extends BaseRichBolt {
+public class ParserBolt extends BaseRichBolt {
 	private OutputCollector collector;
-	
+
 	public void prepare(Map config, TopologyContext context,
 			OutputCollector collector) {
 		this.collector = collector;
 	}
 
 	public void execute(Tuple tuple) {
-		System.out.println("in url dedup:"+tuple.toString());
 	}
 
 	public void declareOutputFields(OutputFieldsDeclarer declarer) {
-//		declarer.declare(new Fields("word", "count"));
+		
 	}
 
 }

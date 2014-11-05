@@ -12,20 +12,20 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+	<classpathentry exported="true" kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/0cm/cm1/Orestes-Bloomfilter-master/dist/jedis-2.5.1.jar"/>
-	<classpathentry kind="lib" path="D:/0cm/cm1/Orestes-Bloomfilter-master/dist/gson-2.2.4.jar"/>
-	<classpathentry kind="lib" path="D:/0cm/cm1/Orestes-Bloomfilter-master/dist/commons-pool2-2.2.jar"/>
-	<classpathentry kind="lib" path="D:/0cm/cm1/Orestes-Bloomfilter-master/dist/bloom-filter-1.01-source.jar"/>
-	<classpathentry kind="lib" path="D:/0cm/cm1/Orestes-Bloomfilter-master/dist/bloom-filter-1.01.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/0cm/Orestes-Bloomfilter-master/dist/jedis-2.5.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/0cm/Orestes-Bloomfilter-master/dist/gson-2.2.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/0cm/Orestes-Bloomfilter-master/dist/commons-pool2-2.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/0cm/Orestes-Bloomfilter-master/dist/bloom-filter-1.0-source.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/0cm/Orestes-Bloomfilter-master/dist/bloom-filter-1.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

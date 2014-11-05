@@ -1,4 +1,4 @@
-package com.github.purplepapa.Storm_Simple_Crawler.bolts;
+package com.github.purplepapa.Storm_Simple_Crawler;
 
 import java.util.HashMap;
 import java.util.Map;

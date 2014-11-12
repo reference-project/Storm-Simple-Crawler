@@ -2,13 +2,14 @@ package com.github.purplepapa.Storm_Simple_Crawler;
 
 import java.util.Map;
 
-import orestes.bloomfilter.BloomFilter;
-import orestes.bloomfilter.FilterBuilder;
 import backtype.storm.task.OutputCollector;
 import backtype.storm.task.TopologyContext;
 import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.topology.base.BaseRichBolt;
 import backtype.storm.tuple.Tuple;
+import orestes.bloomfilter.BloomFilter;
+import orestes.bloomfilter.FilterBuilder;
+
 
 public class URLDeduplicatorBolt extends BaseRichBolt {
 	/**
@@ -30,10 +31,8 @@ public class URLDeduplicatorBolt extends BaseRichBolt {
 		String filterName = "urlbloomfilter";
 		// Open a Redis-backed Bloom filter
 		BloomFilter<String> bfr = new FilterBuilder(1000, 0.01)
-				.name(filterName) // use a distinct name
-				.redisBacked(true).redisHost(host) // Default is localhost
-				.redisPort(port) // Default is standard 6379
-				.buildBloomFilter(); 
+				.name(filterName).redisBacked(true).redisHost(host)
+				.redisPort(port).buildBloomFilter();
 
 		if (!bfr.contains(input)) {
 			bfr.add(input);

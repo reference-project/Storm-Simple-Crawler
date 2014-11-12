@@ -28,17 +28,17 @@ public class CrawlerTopology {
 
 		System.out.println("in main:");
 
-		String topicName = "crawl2";
+		String topicName = "crawl";
 
 		builder.setSpout("random-sentence", new RandomSentenceSpout());
 
 		builder.setBolt(
 				"forwardToKafka", 
-				new ForwardToKafkaBolt("localhost:9092",
+				new ForwardToKafkaBolt("54.245.107.71:9092",
 						"kafka.serializer.StringEncoder", topicName), 2)
 				.shuffleGrouping("random-sentence");
 
-		BrokerHosts hosts = new ZkHosts("localhost:2181");
+		BrokerHosts hosts = new ZkHosts("54.245.107.71:2181");
 		SpoutConfig spoutConfig = new SpoutConfig(hosts, topicName, "/"
 				+ topicName, UUID.randomUUID().toString());
 		spoutConfig.scheme = new SchemeAsMultiScheme(new StringScheme());
@@ -63,7 +63,7 @@ public class CrawlerTopology {
 			LocalCluster cluster = new LocalCluster();
 			cluster.submitTopology(TOPOLOGY_NAME, config,
 					builder.createTopology());
-			Utils.sleep(30000);
+			Utils.sleep(50000);
 			cluster.killTopology(TOPOLOGY_NAME);
 			cluster.shutdown();
 		} else {

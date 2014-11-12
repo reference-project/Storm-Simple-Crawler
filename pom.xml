@@ -69,9 +69,25 @@
 					<mainClass>com.github.purplepapa.Storm_Simple_Crawler.CrawlerTopology</mainClass>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-
+	
+	<repositories>
+		<repository>
+			<id>orestes-bloom-filter</id>
+			<url>https://github.com/Baqend/Orestes-Bloomfilter/tree/master/maven-repo/</url>
+		</repository>
+	</repositories>
+	
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -117,6 +133,13 @@
 			</exclusions>
 		</dependency>
 
+		<dependency>
+			<groupId>com.baqend</groupId>
+			<artifactId>bloom-filter</artifactId>
+			<version>1.02</version>
+			<scope>compile</scope>			
+		</dependency>
 	</dependencies>
+
 
 </project>

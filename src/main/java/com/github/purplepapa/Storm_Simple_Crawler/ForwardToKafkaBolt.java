@@ -3,6 +3,8 @@ package com.github.purplepapa.Storm_Simple_Crawler;
 import java.util.Map;
 import java.util.Properties;
 
+import orestes.bloomfilter.BloomFilter;
+import orestes.bloomfilter.FilterBuilder;
 import kafka.javaapi.producer.Producer;
 import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;
@@ -47,6 +49,20 @@ public class ForwardToKafkaBolt extends BaseRichBolt {
 				topic, msg);
 		producer.send(data);
 		System.out.println("forward2kafka:"+data);
+		String host = "localhost";
+		int port = 6379;
+		String filterName = "urlbloomfilter";
+		// Open a Redis-backed Bloom filter
+		BloomFilter<String> bfr = new FilterBuilder(1000, 0.01)
+				.name(filterName).redisBacked(true).redisHost(host)
+				.redisPort(port).buildBloomFilter();
+
+		if (!bfr.contains(msg)) {
+			bfr.add(msg);
+			System.out.println("FORWARD NOT DUP:" + msg);
+		} else {
+			System.out.println("FORWARD MAY DUP:" + msg);
+		}
 //		producer.close();
 		_collector.ack(input);
 

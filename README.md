@@ -1,7 +1,7 @@
 Storm-Simple-Crawler
 ====================
 
-A simple crawler based on storm/kafka/redis
+A simple crawler based on storm/kafka/redis inspired by [https://github.com/DigitalPebble/storm-crawler]
 
 Features for version 0.0.1:
 * Being Polite : Robot Rules and URL partition by Host
@@ -10,6 +10,6 @@ Features for version 0.0.1:
 * Simple crawler: just crawl given depths and topn urls.
 
 Roadmap:
-1. Xpath extractor.
-2. HTMLUNIT integration.
+* Xpath extractor.
+* HTMLUNIT integration.
 
